@@ -103,7 +103,7 @@ If you believe Gotham is being used to harm someone, we want to know, and we
 will be honest about what we can do. The design means we cannot read messages or
 identify users. We can act on the parts we do control: the software, the
 directory, and relay admission. Open an issue, or mail
-**crypto.app.organisation@proton.me** (the address in the root
+**SoraCorporation@proton.me** (the address in the root
 [README](README.md); the disclosure policy itself is not published in this
 mirror).
 
