@@ -107,6 +107,7 @@ echo "▸ Writing ${CONF}…"
     echo "simple-log"
   else
     echo "log-file=/dev/null"
+    echo "simple-log"
     echo "no-stdout-log"
   fi
   if [[ -n "${TLS_CERT}" && -n "${TLS_KEY}" ]]; then
