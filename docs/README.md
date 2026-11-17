@@ -35,11 +35,10 @@ A Sphinx/Loopix mixnet:
 
 ## License — open
 
-Unlike the Amon Messenger app, the Amon network is **open**:
-**AGPL-3.0-or-later**, or a separate commercial licence. A network of relays
-nobody may redistribute is not a network — so anyone may run, study, and fork a
-relay. See [`../LICENSE`](../LICENSE); for commercial terms, write to the
-address in the root README.
+The Amon network is **open**: **AGPL-3.0-or-later**, or a separate commercial
+licence. A network of relays nobody may redistribute is not a network — so
+anyone may run, study, and fork a relay. See [`../LICENSE`](../LICENSE); for
+commercial terms, write to the address in the root README.
 
 ## The crates (at the repository root)
 

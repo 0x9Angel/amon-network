@@ -181,21 +181,20 @@ Please give us a reasonable window to ship a fix before publishing.
 **AGPL-3.0-or-later**, or a separate commercial licence.
 
 The AGPL is deliberate: §13 closes the network-service loophole, so anyone who
-runs a modified version of the Amon network as a service must offer their
-changes to its users. An anonymity network whose operators can quietly fork it
-into something else is not an anonymity network.
+runs a modified version of the Amon network software as a service must offer
+their changes to its users. An anonymity network whose operators can quietly
+fork it into something else is not an anonymity network.
 
 See [`LICENSE`](LICENSE). For commercial terms, mail the address above.
 
 ## What is *not* in this repository
 
-The **Amon Messenger application** — the messenger client, its X3DH and Double
-Ratchet implementation, the encrypted store, and the enterprise integrations —
-is a separate, proprietary product and is not published here.
+**Amon Messenger** — the messenger client, its X3DH and Double Ratchet
+implementation, the encrypted store, and the enterprise integrations — is a
+separate product and is not published here.
 
-That split is deliberate and stated plainly rather than blurred: the network is
-open so it can be inspected, extended and run by anyone, because a network
-nobody can audit is not one you should route sensitive traffic through. The
-application is the commercial product.
+The network is open so it can be inspected, extended and run by anyone,
+because a network nobody can audit is not one you should route sensitive
+traffic through.
 
 Copyright © 2026 0x9Angel.

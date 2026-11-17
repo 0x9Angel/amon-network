@@ -26,7 +26,7 @@ commercial license (see LICENSE-COMMERCIAL.md), at your choice.
 
 The Amon Messenger application (crypto-proto, crypto-agent, crypto-store,
 crypto-tests, crypto-enterprise, crypto-licensor, crypto-admin, crypto-tauri) is
-NOT under the AGPL — it is proprietary. See LICENSE and LICENSE-PROPRIETARY.md.
+not part of this repository, and this file does not cover it.
 
 ================================================================================
  KEY CONSEQUENCE OF THE AGPL (network-use / "SaaS" clause)
