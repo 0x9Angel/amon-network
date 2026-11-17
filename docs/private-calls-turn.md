@@ -1,9 +1,10 @@
 # Private (relay-only) calls — self-hosted TURN
 
-Audio calls in Crypto use WebRTC. In **relay-only** mode (the default) the media
-is forced through a **TURN** server so **neither peer learns the other's IP**.
-This guide sets up your own TURN on a relay VM, with the directory authority
-issuing **short-lived credentials** so the app never holds a TURN password.
+Audio calls in Amon Messenger use WebRTC. In **relay-only** mode (the default)
+the media is forced through a **TURN** server so **neither peer learns the
+other's IP**. This guide sets up your own TURN on a relay VM, with the directory
+authority issuing **short-lived credentials** so the app never holds a TURN
+password.
 
 ## Honest trade-off (read this first)
 
@@ -24,9 +25,9 @@ real-time media never goes through the mixnet. Chosen model = Signal/SimpleX.
    coturn on a relay VM  ◀───────────────────────────  same shared secret
 ```
 
-- **coturn** runs on a relay VM (different ports from the Gotham relay — no
-  conflict), in `use-auth-secret` mode: it only accepts **HMAC-signed, expiring**
-  credentials.
+- **coturn** runs on a relay VM (different ports from the Amon network relay —
+  no conflict), in `use-auth-secret` mode: it only accepts **HMAC-signed,
+  expiring** credentials.
 - The **authority** holds the same shared secret and mints a credential per
   `GET /turn` request (`credential = base64(HMAC-SHA1(secret, expiry))`). The
   secret **never leaves the servers**; the app only ever gets an expiring token.

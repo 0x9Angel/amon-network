@@ -1,9 +1,10 @@
-# Gotham — the mixnet
+# The Amon network — the mixnet
 
-**Gotham is the anonymity network that carries Crypto's traffic — and could
-carry any other application's.** This folder is the single entry point for
-understanding it; the code lives in the `crypto-gotham*` crates at the
-repository root.
+**The Amon network is the anonymity network that carries Amon Messenger's
+traffic — and could carry any other application's.** This folder is the single
+entry point for understanding it; the code lives in the `crypto-gotham*` crates
+at the repository root. Before Amon Messenger 2.5.0 the network was called
+Gotham, the name the crates still carry.
 
 ## What it is
 
@@ -34,10 +35,11 @@ A Sphinx/Loopix mixnet:
 
 ## License — open
 
-Unlike the Crypto app, Gotham is **open**: **AGPL-3.0-or-later**, or a separate
-commercial licence. A network of relays nobody may redistribute is not a network
-— so anyone may run, study, and fork a relay. See [`../LICENSE`](../LICENSE); for
-commercial terms, write to the address in the root README.
+Unlike the Amon Messenger app, the Amon network is **open**:
+**AGPL-3.0-or-later**, or a separate commercial licence. A network of relays
+nobody may redistribute is not a network — so anyone may run, study, and fork a
+relay. See [`../LICENSE`](../LICENSE); for commercial terms, write to the
+address in the root README.
 
 ## The crates (at the repository root)
 

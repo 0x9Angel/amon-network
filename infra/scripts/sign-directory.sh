@@ -4,7 +4,7 @@ set -euo pipefail
 
 show_help() {
     cat <<'EOF'
-sign-directory.sh — Build a signed Gotham directory from your relay set.
+sign-directory.sh — Build a signed Amon network directory from your relay set.
 
 Run this LOCALLY (not on the VPS) after `install-relay.sh` has produced
 a public key on each of your 3 relays.
@@ -16,7 +16,7 @@ Usage:
       --relay-c "<HEX_PUBKEY_C>:<IP_C>:443" \
       --output  gotham-bootstrap.json
 
-Output: a JSON file the Crypto app reads at boot to learn the relay set.
+Output: a JSON file Amon Messenger reads at boot to learn the relay set.
 Copy it to `<data_dir>/gotham/directory.json` on each app instance:
   - Linux:   ~/.crypto/gotham/directory.json
   - macOS:   ~/Library/Application Support/com.crypto.messenger/gotham/directory.json
@@ -102,7 +102,7 @@ rm -f "$RELAYS_JSON"
 
 echo "Signed directory written to: $OUTPUT"
 echo
-echo "Copy it to your Crypto data dir on each app instance:"
+echo "Copy it to your Amon Messenger data dir on each app instance:"
 echo "  Linux:   ~/.crypto/gotham/directory.json"
 echo "  macOS:   ~/Library/Application Support/com.crypto.messenger/gotham/directory.json"
 echo "  Windows: %APPDATA%/com.crypto.messenger/gotham/directory.json"

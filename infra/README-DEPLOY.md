@@ -1,10 +1,10 @@
-# Option B — Self-Hosted Gotham Testnet (Cloud Always-Free)
+# Option B — Self-Hosted Amon Network Testnet (Cloud Always-Free)
 
-A turnkey package to deploy 3 Gotham mixnet relays on Oracle Cloud
+A turnkey package to deploy 3 relays of the Amon network on Oracle Cloud
 (Always Free) + Google Cloud (Always Free) for **0€/month**. You are
 the sole operator of all 3 relays, so anonymity-set = 1 against
-yourself, but the network is reachable from anywhere and lets the
-Crypto app function end-to-end.
+yourself, but the network is reachable from anywhere and lets
+Amon Messenger function end-to-end.
 
 This complements **Option D** (embedded relay in every app — see
 [`GOTHAM-EMBEDDED.md`](../docs/gotham/README.md)), which is the long-term
@@ -21,7 +21,7 @@ After completing this guide you will have:
   systemd service on UDP/443.
 - **1 Google Cloud e2-micro VM** (1/8 vCPU shared, 1 GB RAM) in a US
   region, same setup.
-- A **signed `gotham-bootstrap.json`** that the Crypto app reads to
+- A **signed `gotham-bootstrap.json`** that Amon Messenger reads to
   learn about these 3 relays and route through them.
 
 All three VMs are hardened (no-new-privs, read-only root FS, ufw deny
@@ -45,8 +45,8 @@ On your local machine:
 
 ## Step 1 — Generate a Directory Authority key (one time, local)
 
-This is the key that signs your `gotham-bootstrap.json`. The Crypto
-app pins this pubkey, so once you ship it you cannot rotate it
+This is the key that signs your `gotham-bootstrap.json`. Amon Messenger
+pins this pubkey, so once you ship it you cannot rotate it
 without re-shipping the app. Store the **secret half** somewhere safe
 (YubiKey for production; for personal testnets `~/.gotham-authority.key`
 with `chmod 0400` is fine).
@@ -112,7 +112,7 @@ For each of the 3 VMs:
 
 ```bash
 ssh ubuntu@<VM_IP>
-sudo bash -c 'curl -fsSL https://raw.githubusercontent.com/0x9Angel/Crypto/main/infra/scripts/install-relay.sh | bash'
+sudo bash -c 'curl -fsSL https://raw.githubusercontent.com/0x9Angel/amon-relay/main/infra/scripts/install-relay.sh | bash'
 ```
 
 OR, if you've cloned the repo:
@@ -184,9 +184,9 @@ Once the app sees your real 3-relay directory, you can turn off the
 local 3-relay dev mode:
 
 ```sqlite
--- via the Crypto SQLite DB (you can run this through any sqlite3 CLI
--- with `PRAGMA key = '<password-derived-key>'` first — or wait for
--- the `set_gotham_devmode` Tauri command).
+-- via the Amon Messenger SQLite DB (you can run this through any
+-- sqlite3 CLI with `PRAGMA key = '<password-derived-key>'` first — or
+-- wait for the `set_gotham_devmode` Tauri command).
 INSERT OR REPLACE INTO settings (key, value) VALUES ('gotham_devmode', '0');
 ```
 
@@ -194,13 +194,13 @@ INSERT OR REPLACE INTO settings (key, value) VALUES ('gotham_devmode', '0');
 
 ## Step 7 — Verify the network works end-to-end
 
-On any machine with the Crypto app installed and your directory pinned:
+On any machine with Amon Messenger installed and your directory pinned:
 
 1. Unlock the app, wait for `gotham-init-progress` events to reach
    `pct: 100`.
 2. Open Settings → Network. You should see:
-   - Transport: `Gotham mixnet — ready`
-   - Your Gotham address (your own pubkey hex)
+   - Transport: `Amon network mixnet — ready`
+   - Your Amon network address (your own pubkey hex)
    - Directory: 3 relays
 3. Create an invitation, copy the URI, paste it into another instance
    of the app on a second machine (or in the same machine for a
@@ -247,7 +247,7 @@ sudo systemctl restart crypto-gotham-relay
 ### Oracle Cloud reclaims your "free" VMs
 
 Oracle has been known to terminate Always Free instances that look
-"idle". The Gotham relay generates constant cover traffic (~10
+"idle". The Amon network relay generates constant cover traffic (~10
 packets/sec), so this shouldn't trigger their reclaim heuristic, but
 monitor the VMs every couple of weeks. Set up a `cron` heartbeat that
 SSHes in once a day — that should suffice.

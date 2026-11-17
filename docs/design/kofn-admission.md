@@ -181,7 +181,7 @@ Shared wire types live in `crypto-gotham-directory::wire` so the authority
   authorities** over the real axum handlers via `oneshot`: each attests on
   `/enroll`, serves it on `/admissions`, a 2-of-3 quorum verifies, sub-quorum /
   far-future-epoch / legacy-no-epoch are all rejected.
-- The client-side admission core (`kof_*`), in the Crypto application — not
+- The client-side admission core (`kof_*`), in Amon Messenger — not
   published in this repository; described here so the protocol side is complete:
   quorum admits, sub-quorum/forged/unknown-authority/stale/wrong-identity/
   operator-mismatch all dropped; `parse_authority_set` shapes.

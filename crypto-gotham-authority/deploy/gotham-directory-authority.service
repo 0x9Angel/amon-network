@@ -1,6 +1,6 @@
 
 [Unit]
-Description=Gotham directory authority (auto-enrollment + signed directory)
+Description=Amon network directory authority (auto-enrollment + signed directory)
 After=network-online.target
 Wants=network-online.target
 

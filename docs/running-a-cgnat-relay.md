@@ -6,11 +6,11 @@ Copyright (C) 2026 0x9Angel.
 # Running a relay on 4G / 5G / behind CGNAT (RFC B3)
 
 Status: **live since 2026-07-13.** You do **not** need a public IP or a
-port-forward to run a Gotham relay. If you are on mobile (4G/5G tethering), a
-Freebox with broken UPnP, or double-NAT, you can still contribute — the relay
-holds an **outbound tunnel** to a public *rendezvous point* and receives its
-mixnet traffic through it (RFC B3 reverse transport). No inbound reachability
-required.
+port-forward to run an Amon network relay. If you are on mobile (4G/5G
+tethering), a Freebox with broken UPnP, or double-NAT, you can still
+contribute — the relay holds an **outbound tunnel** to a public *rendezvous
+point* and receives its mixnet traffic through it (RFC B3 reverse transport).
+No inbound reachability required.
 
 ## How it works (30 seconds)
 

@@ -51,7 +51,7 @@ apt-get install -y -qq coturn
 CONF=/etc/turnserver.conf
 echo "▸ Writing ${CONF}…"
 {
-  echo "# Managed by install-turn.sh — Gotham private-call TURN. Do not hand-edit."
+  echo "# Managed by install-turn.sh — Amon network private-call TURN. Do not hand-edit."
   echo "listening-port=3478"
   echo "listening-ip=0.0.0.0"
   echo "relay-ip=${LOCAL_IP}"
