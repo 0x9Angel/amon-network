@@ -112,7 +112,8 @@ For each of the 3 VMs:
 
 ```bash
 ssh ubuntu@<VM_IP>
-sudo bash -c 'curl -fsSL https://raw.githubusercontent.com/0x9Angel/amon-relay/main/infra/scripts/install-relay.sh | bash'
+curl -fsSL https://raw.githubusercontent.com/0x9Angel/amon-relay/main/infra/scripts/install-relay.sh \
+  | sudo GOTHAM_OPERATOR=your-name GOTHAM_ENROLL_TOKEN=<token> bash
 ```
 
 OR, if you've cloned the repo:
@@ -120,8 +121,13 @@ OR, if you've cloned the repo:
 ```bash
 scp -r infra ubuntu@<VM_IP>:~/
 ssh ubuntu@<VM_IP>
-sudo bash infra/scripts/install-relay.sh
+sudo GOTHAM_OPERATOR=your-name GOTHAM_ENROLL_TOKEN=<token> \
+    bash infra/scripts/install-relay.sh
 ```
+
+`GOTHAM_OPERATOR` is required, and the installer stops without it: use the
+same value on every relay you run. `GOTHAM_ENROLL_TOKEN` is the enrolment
+token that the authorities this project runs ask of every relay.
 
 At the end, the script prints a JSON snippet you'll need:
 
